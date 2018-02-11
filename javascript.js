@@ -118,7 +118,33 @@ document.write("At Index 2 : ", randomString.charAt(2) + "<br />");
 var randomStringArray = randomString.split(" ");
 console.log(randomStringArray);
 
+//trim white space before or after string
+randomString = randomString.trim();
 
+//change to all caps
+document.write(randomString.toUpperCase() + "<br />");
+
+//change to all lower case
+document.write(randomString.toLowerCase() + "<br />");
+
+//style strings
+var styleString = "Random String";
+
+document.write(styleString.big(), "<br />");
+document.write(styleString.bold(), "<br />");
+document.write(styleString.fontcolor("blue"), "<br />");
+document.write(styleString.fontsize("20px"), "<br />");
+document.write(styleString.italics(), "<br />");
+document.write(styleString.link("#"), "<br />");
+document.write(styleString.small(), "<br />");
+document.write(styleString.strike(), "<br />");
+document.write(styleString.sub(), "<br />");
+document.write(styleString.sup(), "<br />");
+
+//CONDITIONALS
+
+//relational operators: === != > < >= <=
+//logical operators: && || !
 
 
 
