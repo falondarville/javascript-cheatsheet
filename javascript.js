@@ -204,3 +204,69 @@ while (i <= 10) {
 // //this will happen if the user guesses correctly
 // alert("You guess 15!");
 
+//for loop
+for(j = 0; j <= 20; j++) {
+//if numbers are even
+//continue means go to the next iteration, so this will print odd numbers
+	if((j % 2) === 0) {
+		continue;
+	}
+//breaks the loop
+	if(j === 15) {
+		break;
+	}
+	document.write(j + "<br />");
+}
+
+//for in loop
+var customer = {name : "Bob Thomas", address : "123 Main", balance: 50.50}
+// for each key (k) in the loop
+for(k in customer) {
+	document.write(customer[k] + "<br />")
+}
+
+//ARRAYS
+
+//get value at index in array
+var tomSmith = ["Tom Smith", "123 Main", 120.50];
+
+document.write("1st Index ", tomSmith[0], "<br />");
+
+//add value to array through index specification
+tomSmith[3] = "tSmith@aol.com";
+
+//denote location of value you want to overwrite and state how many places you want to overwrite
+//first number is the location of the index I want to delete, in this case "120.50", the second tells the computer how many values to delete
+tomSmith.splice(2,1, "Pittsburg", "PA");
+
+console.log(tomSmith[2]);
+
+//turn an array into a string
+document.write("Array : ", tomSmith.valueOf(), "<br />");
+
+//turn an array into a string using specific formatting
+document.write("Array : ", tomSmith.join(", "), "<br />");
+
+//delete an index
+delete tomSmith[3];
+
+//sort alphabetically
+//note that numbers in array appear first
+document.write(tomSmith.sort()+ "<br />");
+
+//sort based off of numbers
+var numbers = [4, 3, 9, 1, 20, 43];
+
+numbers.sort(function(x,y) {return x -y});
+
+document.write(numbers.sort(function(x,y) {return x -y})+ "<br />");
+
+
+
+
+
+
+
+
+
+
