@@ -254,17 +254,98 @@ delete tomSmith[3];
 //note that numbers in array appear first
 document.write(tomSmith.sort()+ "<br />");
 
-//sort based off of numbers
+//sort from smallest to largest number
+//note that to sort from largest to smallest, switch the x and y order
 var numbers = [4, 3, 9, 1, 20, 43];
 
 numbers.sort(function(x,y) {return x -y});
 
 document.write(numbers.sort(function(x,y) {return x -y})+ "<br />");
 
+//join two arrays together
+var firstString = ["this", "that", "though", "thus"];
 
+var secondString = ["thought", "thing", "tinker"];
 
+var combinedArray = firstString.concat(secondString);
 
+document.write(combinedArray, "<br />");
 
+//remove the last item from one array
+firstString.pop();
+
+//add item to the end of an array
+firstString.push("things");
+
+//delete the first item in an array
+firstString.shift();
+
+//add items to the beginning of an array
+firstString.unshift("think");
+
+//print items in an array by iterating through a for loop
+for( i = 0; i < firstString.length; i++ ) {
+	document.write(firstString[i], "<br />");
+}
+
+//FUNCTIONS
+
+//check if a value is inside an array by using a function
+var thisArray = ["cow", "pig", "owl", "reindeer", "unicorn", "velociraptor"];
+
+function inArray(arraytoCheck, value) {
+	for ( i = 0; i < thisArray.length; i ++ ) {
+		if(thisArray[i] === value) {
+			return true;
+		}
+	}
+	return false;
+}
+
+document.write("In Array : ", inArray(thisArray, "pig"), "<br />");
+
+document.write("In Array : ", inArray(thisArray, "T-rex"), "<br />");
+
+//passing functions
+//note that var2 is a local variable
+//pass functions through another function to do multiple tasks at once
+function times2(number) {
+	var var2 = 2;
+	return number * var2;
+}
+
+function times3(number) {
+	return number * 3;
+}
+
+function multiply(func, number) {
+	return func(number);
+}
+
+document.write("2 * 15 = ", multiply(times2, 15), "<br />");
+
+document.write("3 * 15 = ", multiply(times3, 15), "<br />");
+
+//function expressions
+//when you store functions in variables, you can easily add functions to an array
+var triple = function(number) {
+	return number * 3;
+}
+
+document.write("3 * 45 = ", multiply(triple, 45), "<br />");
+
+//function without argument restrictions
+function getSum() {
+
+	var sum = 0;
+	for (i = 0; i < arguments.length; i ++) {
+
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+document.write("Sum = ", getSum(1, 12, 2, 3, 4, 5, 6), "<br />");
 
 
 
