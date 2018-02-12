@@ -147,5 +147,60 @@ document.write(styleString.sup(), "<br />");
 //logical operators: && || !
 
 
+//demonstration of <= operator
+var age = 8;
 
+if (age>= 5 && age <= 6) {
+	document.write("Go to kindergarten" + "<br />");
+} else if (age > 18) {
+	document.write("Go to college" + "<br />");
+} else {
+	document.write("Go to grade ", age - 5, "<br />");
+}
+
+//demonstration of true and false logic 
+document.write("true || false : ", true || false, "<br />");
+document.write("!true : ", !true, "<br />");
+document.write("\"5\" == 5 = ", ("5" == 5), "<br />");
+document.write("\"5\" === 5 = ", ("5" === 5), "<br />");
+
+//switch statements
+var myAge = 6;
+
+switch(myAge) {
+	case 5:
+	case 6:
+		document.write("Go to kindergarten", "<br />");
+	//use break when you want to stop checking values
+	break;
+
+	case 7 :
+		document.write("Go to 1st grade", "<br />");
+	break;
+	//use default to denote the fall-back action
+	default:
+		document.write("I don't know", "<br />");
+}
+
+//(condition) ? ifTrue : ifFalse
+// add condition then assign true otherwise false
+var canIVote = (age>=18) ? true : false;
+document.write(canIVote + "<br />");
+
+//while loops
+//while condition is true, loop will run
+var i = 1;
+
+while (i <= 10) {
+	document.write(i + "<br />");
+	i++;
+}
+
+//do will loop
+//while condition is true, loop will run. All do while loop run at least once
+// do {
+// 	var guess = prompt("Guess a number between 1 and 20");
+// } while (guess != 15)
+// //this will happen if the user guesses correctly
+// alert("You guess 15!");
 
