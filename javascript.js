@@ -146,7 +146,6 @@ document.write(styleString.sup(), "<br />");
 //relational operators: === != > < >= <=
 //logical operators: && || !
 
-
 //demonstration of <= operator
 var age = 8;
 
@@ -345,7 +344,55 @@ function getSum() {
 	return sum;
 }
 
-document.write("Sum = ", getSum(1, 12, 2, 3, 4, 5, 6), "<br />");
+document.write("Sum = ", getSum(1, 12, 2, 3, 3, 4, 5, 6), "<br />");
+
+//perform a function on a string
+function times4(theArray) {
+
+	var newArray = [];
+	for( i = 0; i < theArray.length; i ++) {
+		newArray.push(theArray[i] * 4);
+	}
+	return newArray;
+}
+
+document.write("Times 4 = ", times4([1, 1, 2, 3, 4, 5, 6]), "<br />");
+
+//recursive functions
+//these are functions that call themselves
+function factorial(number) {
+
+	if (number <= 1) {
+		return 1;
+	} else {
+		return number * factorial(number - 1);
+	}
+}
+
+document.write("Factorial of 4 = ", factorial(4), "<br />");
+
+//EVENT HANDLING
+
+//see HTML to see where this function is being called
+function openAlert(message){
+	alert(message);
+}
+
+//get the key code
+function getChar(event) {
+	if(event.which == null) {
+		return String.fromCharCode(event.keyCode);
+	} else if (event.which != 0 && event.charCode != 0){ 
+		return String.fromCharCode(event.which);
+	} else {
+		return null;
+	}
+}
+
+
+
+
+
 
 
 

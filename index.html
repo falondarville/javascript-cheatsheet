@@ -10,7 +10,36 @@ https://www.youtube.com/watch?v=fju9ii8YsGs -->
 
 	<p id="sayHello"></p>
 
+<!-- the following is in-line JavaScript -->
+<!-- using JavaScript:void(0) prevents the entire page from reloading -->
+	<a href="JavaScript:void(0)" onClick="alert('Hello');">Say Hello</a>
+	<br>
 
+	<a href="JavaScript:void(0)" onClick="openAlert('Hi how are you');">Say something</a>
+	<br>
+
+<!-- some other in-line JavaScript abilities -->
+	<a href="JavaScript:void(0)" onmouseover="this.style.color ='red';" onmouseout="this.style.color = 'blue';" ondblclick="this.text='You double clicked me!';" onmousedown="this.text= 'Don\'t press too hard';" onmouseup="this.text='Thank you';">Mouse over me, then double click me!</a>
+	<br>
+
+<!-- outputting user input through in-line JavaScript -->
+	<input type="text" id="randomInput" onchange="var dataEntered=document.getElementById('randomInput').value; alert('User Typed ' + dataEntered)" >
+	<br>
+
+<!-- record keys and display them -->
+	<form action="#" id="sampleForm">
+		
+		<input type="text" id="charInput">
+
+		<p id="keyData">Key Data Here</p>
+
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+
+	</form>
+
+	<img src="bug-6.png" alt="bee" id="logo" style="max-width: 200px;">
+	<br>
 
 <script type="text/javascript" src="javascript.js"></script>
 </body>
