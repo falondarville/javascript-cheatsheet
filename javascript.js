@@ -378,7 +378,7 @@ function openAlert(message){
 	alert(message);
 }
 
-//get the key code
+//get the key code upon user typing
 function getChar(event) {
 	if(event.which == null) {
 		return String.fromCharCode(event.keyCode);
@@ -389,11 +389,47 @@ function getChar(event) {
 	}
 }
 
+//dynamically print the keys pressed
+document.getElementById("charInput").onkeypress =
+	function(event) {
+		var char = getChar(event || window.event)
+		if(!char) return false;
 
+		document.getElementById("keyData").innerHTML = char + " was clicked";
+		return true;
+	}
 
+ //onfocus function, click into input field will print message to screen
+document.getElementById("charInput").onfocus = function(event) {
+	document.getElementById("keyData").innerHTML = "Input Gained Focus";
+}
 
+//onselect function, highlight some content within your input to see message on screen
+document.getElementById("charInput").onselect = function(event) {
+	document.getElementById("keyData").innerHTML = "Text Selected";
+}
 
+//onclick function for hide element
+document.getElementById("logoButton").onclick = function(event) {
+	document.getElementById("logo").className = "hidden";
+}
 
+//onclick function to show element
+document.getElementById("showButton").onclick = function(event) {
+	document.getElementById("logo").className = "show";
+}
+
+//clear inputs in input fields
+//gets element by tag name as opposed to class or id
+document.getElementById("clearInputs").onclick = function(event) {
+	var inputElements = document.getElementByTagName("input");
+
+	for(var i=0; i < inputElements.length; i ++) {
+		if (inputElements[i].type == "text") {
+			inputElements[i].value = "";
+		}
+	}
+}
 
 
 
