@@ -431,6 +431,91 @@ document.getElementById("clearInputs").onclick = function(event) {
 	}
 }
 
+//MANIPULATING THE DOM
 
+//get the current page that you are on
+document.write("Current URL : ", window.location.href, "<br />");
 
+//get your current host
+//you won't see a host if you have your file locally
+document.write("Current host : ", window.location.hostname, "<br />");
 
+//get the pathname
+document.write("Current host : ", window.location.pathname, "<br />");
+
+//reload the page onclick of button
+document.getElementById("reload").onclick = function(event) {
+	window.location.reload(true);
+}
+
+//OBJECT ORIENTED 
+
+//create an object
+var customerOne = {
+	name: "John Smith",
+	address: "123 Main",
+	city: "Pittsburg",
+	state: "PA",
+	balance: 120.50,
+	makePayment: function(amountPaid) {
+		this.balance -= amountPaid;
+	},
+	addBalance: function(amountCharged) {
+		this.balance += amountCharged;
+	}
+};
+
+//print key value in object
+document.write("Customer name : ", customerOne.name, "<br />");
+
+//change value of key in object
+customerOne.street = "215 North Street";
+
+document.write("Customer New Address: ", customerOne.street, "<br />");
+
+//add values to object
+customerOne.country = "United States";
+
+//delete values in object
+delete customerOne.country;
+
+//print all object keys
+for(var k in customerOne) {
+	if(customerOne.hasOwnProperty(k)) {
+		document.write(k, "<br />");
+	}
+}
+
+//check if key is in object
+document.write("Check if name is in customerOne object: ", 'name' in customerOne, "<br />");
+
+//generic objects using an object constructor
+function Customer(name, street, city, state, balance) {
+	this.name = name;
+	this.street = street;
+	this.city = city;
+	this.state = state;
+	this.balance = balance;
+	this.makePayment = function(amountPaid) {
+		this.balance -= amountPaid;
+	}
+	this.addBalance = function(amountCharged) {
+		this.balance += amountCharged;
+	}
+};
+
+//add new customer using Customer generic object
+var customerTwo = new Customer ("Sally Small", "456 Method Street", "Portland", "Oregon", 2.00);
+
+//call function within generic object
+customerTwo.addBalance(15.50);
+
+//create shared variable in generic object
+Customer.prototype.isCreditAvailable = true;
+
+//create shared function in generic object
+Customer.prototype.nameString = function() {
+	return this.name;
+};
+
+document.write(customerTwo.nameString());
